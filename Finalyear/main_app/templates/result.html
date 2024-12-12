@@ -1,0 +1,103 @@
+<style>
+    /* Overall container styling */
+    .result-container {
+        max-width: 600px;
+        margin: 50px auto; /* Center the container on the page */
+        padding: 20px;
+        background-color: #f9f9f9; /* Light gray background */
+        border: 1px solid #ddd; /* Subtle border */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        text-align: center; /* Center align text */
+        font-family: Arial, sans-serif; /* Clean font */
+    }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    /* Heading styling */
+    .result-container h1 {
+        font-size: 1.8rem;
+        color: #333; /* Dark gray color */
+        margin-bottom: 20px; /* Space below the heading */
+    }
+
+    /* Classification result styling */
+    .result-container p {
+        font-size: 1.2rem;
+        color: #555; /* Medium gray for better contrast */
+        margin-bottom: 20px;
+    }
+
+    .result-container p strong {
+        color: #007bff; /* Highlighted color for the result */
+    }
+
+    /* Image styling */
+    .result-container img {
+        max-width: 100%; /* Ensure image fits within the container */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 8px; /* Slightly rounded image corners */
+        margin-bottom: 20px; /* Space below the image */
+        border: 1px solid #ddd; /* Border for better separation */
+    }
+
+    /* Link styling */
+    .result-container a {
+        display: inline-block; /* Makes the link like a button */
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: #fff; /* White text */
+        background-color: #007bff; /* Blue background */
+        text-decoration: none; /* Remove underline */
+        border-radius: 5px; /* Rounded corners */
+        transition: background-color 0.3s; /* Smooth hover transition */
+    }
+
+    /* Link hover effect */
+    .result-container a:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+    .head {
+        background-color: #ff4d4d; /* Bright red for attention */
+        height: 50px; /* Larger header height for better visibility */
+        width:100%;
+    }
+    @media (max-width: 480px) {
+        body{
+            height:100vh;
+        }
+        h1 {
+            font-size: 1rem;
+            
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+
+        input[type="file"] {
+            font-size: 0.9rem;
+            padding: 8px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;  /* Full viewport height */
+            width: 100%;    /* Full viewport width */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+</style>
+<div class="head"></div>
+<div class="result-container">
+    <h1>Image Classification Result</h1>
+    <p>The image is classified as: <strong>{{ result }}</strong></p>
+    <img src="media/{{ image_url }}" alt="Uploaded Image">
+    <a href="/">Upload Another Image</a>
+</div>

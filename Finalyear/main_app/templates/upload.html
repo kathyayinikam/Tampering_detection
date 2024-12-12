@@ -1,0 +1,152 @@
+<style>
+    /* Global box-sizing for consistent padding and border behavior */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Center body content and set background color */
+    body {
+        height: 100vh;
+        background-color: #f4f4f4; /* Light gray background for better contrast */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Container holding all content */
+    .main {
+        display: flex;
+        flex-direction: column;
+       
+        align-items: center;
+        justify-content: center;
+        width: 90%; /* Adjusted width for mobile screens */
+        max-width: 400px; /* Max width for larger devices */
+        background-color: #fff; /* White background for the card effect */
+        border: 1px solid #ddd; /* Subtle border for separation */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+        overflow: hidden; /* Prevents content overflow */
+        padding: 20px;
+    }
+
+    /* Header section */
+    .head {
+        background-color: #ff4d4d; /* Bright red for attention */
+        height: 50px; /* Larger header height for better visibility */
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Main content area */
+    .main {
+        text-align: center; /* Centers content inside the main area */
+        background-color: #e0f7fa; /* Aqua tint for a fresh look */
+        width: 100%;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    /* Form title styling */
+    h1 {
+        color: #333; /* Dark gray text */
+        font-size: 1.25rem;
+        margin-bottom: 20px; /* Adds spacing below the heading */
+    }
+
+    /* Form styling */
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Adds space between form elements */
+    }
+
+    /* File input styling */
+    input[type="file"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+        font-size: 1rem;
+    }
+
+    /* Button styling */
+    button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: #fff;
+        background-color: #007bff; /* Blue for the button */
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    /* Button hover effect */
+    button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    @media (max-width: 480px) {
+        body{
+            height:100vh;
+        }
+        h1 {
+            font-size: 1rem;
+            
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+
+        input[type="file"] {
+            font-size: 0.9rem;
+            padding: 8px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;  /* Full viewport height */
+            width: 100%;    /* Full viewport width */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .header{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        width:100%;
+        height:100%;
+        justify-content:center;
+        align-items:center;
+        margin-top:0px;
+        
+    }
+</style>
+
+<body>
+    <div class="header">
+    <div class="head"></div>
+    <div class="container">
+        <center><h1>Tampering Detection in Medical Images</h1></center>
+        <center> <div class="main">
+            <h1>Upload an Image</h1>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="image" accept="image/*" required>
+                <button type="submit">Upload</button>
+            </form>
+       
+    </div></center>
+</div>
+</div>
+</body>
